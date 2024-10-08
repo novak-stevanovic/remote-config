@@ -1,0 +1,5 @@
+readonly TEMP_FILENAME=".temp_ppwd.txt"
+touch "$TEMP_FILENAME"
+echo "$(pwd)" > "$TEMP_FILENAME"
+vim -c 'normal! v$"+y' "$TEMP_FILENAME"
+rm "$TEMP_FILENAME"

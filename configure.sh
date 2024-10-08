@@ -1,4 +1,4 @@
-if [[ $# -ne 2 ]]; then
+if [[ $# -ne 3 ]]; then
     echo "Expected 2 arguments. Exiting."
     exit 1
 fi
@@ -40,4 +40,10 @@ if [[ $2 -eq 1 ]]; then
         touch "$VIMRC_FILEPATH"
     fi
     paste_lines "$VIMRC_LINES_FILEPATH" "$VIMRC_FILEPATH"
+fi
+
+if [[ $3 -eq 1 ]]; then
+    if [[ ! -f "$HOME/bin/cpwd" ]]; then
+        ln "$cpwd" "$HOME/bin/cpwd"
+    fi
 fi
