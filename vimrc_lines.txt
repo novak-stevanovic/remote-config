@@ -14,6 +14,7 @@ set wildmode=list:longest
 set nowrap
 set hlsearch
 set fillchars=eob:\ 
+set autoshelldir
 
 nnoremap <Space>h :nohl<CR>
 vnoremap <Space>h :nohl<CR>
@@ -22,7 +23,6 @@ augroup Mkdir
   autocmd!
   autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
 augroup END
-
 
 nnoremap <C-c> <Esc>
 vnoremap <C-c> <Esc>
@@ -96,3 +96,4 @@ nnoremap gcu _x
 
 vnoremap gcc :norm I
 vnoremap gcu :norm _x<CR>gv
+
